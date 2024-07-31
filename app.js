@@ -22,7 +22,7 @@ app.use('/api/auth', authRoutes);
 
 
 const PORT = process.env.PORT || 3000;
-// Sincronizar base de datos y arrancar el servidorrewrerertew
+// Sincronizar base de datos y arrancar el servidorrewrerertewwerwerwer
 sequelize.sync({ force: false })
   .then(() => {
     app.listen(PORT, () => {
