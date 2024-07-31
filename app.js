@@ -13,13 +13,15 @@ const Book = require('./models/Book');
 const Loan = require('./models/Loan');
 const cors = require('cors');
 
+
+const app = express();
+
 const corsOptions = {
   origin: '*', 
   optionsSuccessStatus: 200, 
 };
-
 app.use(cors(corsOptions));
-const app = express();
+
 
 // Middleware
 app.use(bodyParser.json());
