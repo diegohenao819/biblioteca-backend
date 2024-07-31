@@ -14,8 +14,8 @@ const Loan = require('./models/Loan');
 const cors = require('cors');
 
 const corsOptions = {
-  origin: '*', // Reemplaza con tu dominio permitido
-  optionsSuccessStatus: 200, // Algunos navegadores antiguos (IE11, algunos SmartTVs) fallan con status 204
+  origin: '*', 
+  optionsSuccessStatus: 200, 
 };
 
 app.use(cors(corsOptions));
