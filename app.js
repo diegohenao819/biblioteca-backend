@@ -1,4 +1,5 @@
 const express = require('express');
+
 require('dotenv').config();
 const bodyParser = require('body-parser');
 const sequelize = require('./config/database');
@@ -10,8 +11,14 @@ const logger = require('./middlewares/logger');
 const User = require('./models/User');
 const Book = require('./models/Book');
 const Loan = require('./models/Loan');
+const cors = require('cors');
 
+const corsOptions = {
+  origin: '*', // Reemplaza con tu dominio permitido
+  optionsSuccessStatus: 200, // Algunos navegadores antiguos (IE11, algunos SmartTVs) fallan con status 204
+};
 
+app.use(cors(corsOptions));
 const app = express();
 
 // Middleware
