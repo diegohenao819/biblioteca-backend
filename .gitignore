@@ -75,3 +75,5 @@ typings/
 
 # Windows file
 Thumbs.db
+
+.vercel
