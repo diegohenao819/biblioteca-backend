@@ -31,10 +31,10 @@ const Loan = sequelize.define('Loan', {
   },
   returnDate: {
     type: DataTypes.DATE,
+    allowNull: true,
   },
 });
 
-// Relationships
 User.hasMany(Loan, { foreignKey: 'userId' });
 Book.hasMany(Loan, { foreignKey: 'bookId' });
 Loan.belongsTo(User, { foreignKey: 'userId' });

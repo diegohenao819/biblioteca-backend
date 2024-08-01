@@ -20,6 +20,7 @@ const seedDatabase = async () => {
       bcrypt.hash('password123', 10),
       bcrypt.hash('password123', 10),
       bcrypt.hash('password123', 10),
+      bcrypt.hash('abc', 10)
     ]);
 
     // Crear usuarios de ejemplo
@@ -34,6 +35,7 @@ const seedDatabase = async () => {
       { name: 'David Moore', email: 'david.moore@example.com', password: hashedPasswords[7] },
       { name: 'Laura Taylor', email: 'laura.taylor@example.com', password: hashedPasswords[8] },
       { name: 'James Anderson', email: 'james.anderson@example.com', password: hashedPasswords[9] },
+      { name: 'prueba', email: 'prueba@gmail.com',  password: hashedPasswords[10] },
     ]);
 
     // Crear libros de ejemplo
@@ -51,28 +53,28 @@ const seedDatabase = async () => {
     ]);
 
     // Crear préstamos de ejemplo
-    const loans = await Loan.bulkCreate([
-      { userId: users[0].id, bookId: books[0].id, loanDate: new Date(), returnDate: new Date(Date.now() + 8 * 24 * 60 * 60 * 1000) },
-      { userId: users[1].id, bookId: books[1].id, loanDate: new Date(), returnDate: new Date(Date.now() + 9 * 24 * 60 * 60 * 1000) },
-      { userId: users[2].id, bookId: books[2].id, loanDate: new Date(), returnDate: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000) },
-      { userId: users[3].id, bookId: books[3].id, loanDate: new Date(), returnDate: new Date(Date.now() + 6 * 24 * 60 * 60 * 1000) },
-      { userId: users[4].id, bookId: books[4].id, loanDate: new Date(), returnDate: new Date(Date.now() + 5 * 24 * 60 * 60 * 1000) },
-      { userId: users[5].id, bookId: books[5].id, loanDate: new Date(), returnDate: new Date(Date.now() + 4 * 24 * 60 * 60 * 1000) },
-      { userId: users[6].id, bookId: books[6].id, loanDate: new Date(), returnDate: new Date(Date.now() + 5 * 24 * 60 * 60 * 1000) },
-      { userId: users[7].id, bookId: books[7].id, loanDate: new Date(), returnDate: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000) },
-      { userId: users[8].id, bookId: books[8].id, loanDate: new Date(), returnDate: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000) },
-      { userId: users[9].id, bookId: books[9].id, loanDate: new Date(), returnDate: new Date(Date.now() + 9 * 24 * 60 * 60 * 1000) },
-      { userId: users[0].id, bookId: books[1].id, loanDate: new Date(), returnDate: new Date(Date.now() + 8 * 24 * 60 * 60 * 1000) },
-      { userId: users[1].id, bookId: books[2].id, loanDate: new Date(), returnDate: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000) },
-      { userId: users[2].id, bookId: books[3].id, loanDate: new Date(), returnDate: new Date(Date.now() + 6 * 24 * 60 * 60 * 1000) },
-      { userId: users[3].id, bookId: books[4].id, loanDate: new Date(), returnDate: new Date(Date.now() + 5 * 24 * 60 * 60 * 1000) },
-      { userId: users[4].id, bookId: books[5].id, loanDate: new Date(), returnDate: new Date(Date.now() + 9 * 24 * 60 * 60 * 1000) },
-      { userId: users[5].id, bookId: books[6].id, loanDate: new Date(), returnDate: new Date(Date.now() + 12 * 24 * 60 * 60 * 1000) },
-      { userId: users[6].id, bookId: books[7].id, loanDate: new Date(), returnDate: new Date(Date.now() + 11 * 24 * 60 * 60 * 1000) },
-      { userId: users[7].id, bookId: books[8].id, loanDate: new Date(), returnDate: new Date(Date.now() + 20 * 24 * 60 * 60 * 1000) },
-      { userId: users[8].id, bookId: books[9].id, loanDate: new Date(), returnDate: new Date(Date.now() + 13 * 24 * 60 * 60 * 1000) },
-      { userId: users[9].id, bookId: books[0].id, loanDate: new Date(), returnDate: new Date(Date.now() + 14 * 24 * 60 * 60 * 1000) },
-    ]);
+    // const loans = await Loan.bulkCreate([
+    //   { userId: users[0].id, bookId: books[0].id, loanDate: new Date(), returnDate: new Date(Date.now() + 8 * 24 * 60 * 60 * 1000) },
+    //   { userId: users[1].id, bookId: books[1].id, loanDate: new Date(), returnDate: new Date(Date.now() + 9 * 24 * 60 * 60 * 1000) },
+    //   { userId: users[2].id, bookId: books[2].id, loanDate: new Date(), returnDate: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000) },
+    //   { userId: users[3].id, bookId: books[3].id, loanDate: new Date(), returnDate: new Date(Date.now() + 6 * 24 * 60 * 60 * 1000) },
+    //   { userId: users[4].id, bookId: books[4].id, loanDate: new Date(), returnDate: new Date(Date.now() + 5 * 24 * 60 * 60 * 1000) },
+    //   { userId: users[5].id, bookId: books[5].id, loanDate: new Date(), returnDate: new Date(Date.now() + 4 * 24 * 60 * 60 * 1000) },
+    //   { userId: users[6].id, bookId: books[6].id, loanDate: new Date(), returnDate: new Date(Date.now() + 5 * 24 * 60 * 60 * 1000) },
+    //   { userId: users[7].id, bookId: books[7].id, loanDate: new Date(), returnDate: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000) },
+    //   { userId: users[8].id, bookId: books[8].id, loanDate: new Date(), returnDate: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000) },
+    //   { userId: users[9].id, bookId: books[9].id, loanDate: new Date(), returnDate: new Date(Date.now() + 9 * 24 * 60 * 60 * 1000) },
+    //   { userId: users[0].id, bookId: books[1].id, loanDate: new Date(), returnDate: new Date(Date.now() + 8 * 24 * 60 * 60 * 1000) },
+    //   { userId: users[1].id, bookId: books[2].id, loanDate: new Date(), returnDate: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000) },
+    //   { userId: users[2].id, bookId: books[3].id, loanDate: new Date(), returnDate: new Date(Date.now() + 6 * 24 * 60 * 60 * 1000) },
+    //   { userId: users[3].id, bookId: books[4].id, loanDate: new Date(), returnDate: new Date(Date.now() + 5 * 24 * 60 * 60 * 1000) },
+    //   { userId: users[4].id, bookId: books[5].id, loanDate: new Date(), returnDate: new Date(Date.now() + 9 * 24 * 60 * 60 * 1000) },
+    //   { userId: users[5].id, bookId: books[6].id, loanDate: new Date(), returnDate: new Date(Date.now() + 12 * 24 * 60 * 60 * 1000) },
+    //   { userId: users[6].id, bookId: books[7].id, loanDate: new Date(), returnDate: new Date(Date.now() + 11 * 24 * 60 * 60 * 1000) },
+    //   { userId: users[7].id, bookId: books[8].id, loanDate: new Date(), returnDate: new Date(Date.now() + 20 * 24 * 60 * 60 * 1000) },
+    //   { userId: users[8].id, bookId: books[9].id, loanDate: new Date(), returnDate: new Date(Date.now() + 13 * 24 * 60 * 60 * 1000) },
+    //   { userId: users[9].id, bookId: books[0].id, loanDate: new Date(), returnDate: new Date(Date.now() + 14 * 24 * 60 * 60 * 1000) },
+    // ]);
 
     console.log('Base de datos poblada exitosamente.');
   } catch (error) {
