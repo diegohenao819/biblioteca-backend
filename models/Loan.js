@@ -35,9 +35,11 @@ const Loan = sequelize.define('Loan', {
   },
 });
 
+// Definir asociaciones después de que los modelos se hayan importado
 User.hasMany(Loan, { foreignKey: 'userId' });
-Book.hasMany(Loan, { foreignKey: 'bookId' });
 Loan.belongsTo(User, { foreignKey: 'userId' });
+
+Book.hasMany(Loan, { foreignKey: 'bookId' });
 Loan.belongsTo(Book, { foreignKey: 'bookId' });
 
 module.exports = Loan;
