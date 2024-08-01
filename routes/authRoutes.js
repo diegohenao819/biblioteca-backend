@@ -4,9 +4,6 @@ const jwt = require('jsonwebtoken');
 const User = require('../models/User');
 require('dotenv').config();
 
-
-
-
 const router = express.Router();
 
 // Registro de usuarios
@@ -55,6 +52,18 @@ router.post('/login', async (req, res) => {
     res.json({ token });
   } catch (error) {
     res.status(500).json({ error: error.message });
+  }
+});
+
+// Verificar token JWT
+router.post('/verify-token', (req, res) => {
+  const token = req.header('Authorization').replace('Bearer ', '');
+
+  try {
+    const decoded = jwt.verify(token, process.env.SECRET_KEY);
+    res.json({ valid: true, decoded });
+  } catch (error) {
+    res.status(401).json({ valid: false, error: 'Invalid token' });
   }
 });
 
