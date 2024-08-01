@@ -1,8 +1,17 @@
 const Book = require('../models/Book');
+const Loan = require('../models/Loan');
 
 const getBooks = async (req, res) => {
   try {
-    const books = await Book.findAll();
+    const books = await Book.findAll({
+      include: [
+        {
+          model: Loan,
+          attributes: ['id', 'userId', 'loanDate', 'returnDate'],
+          required: false, // Esto asegura que también se incluyan libros sin préstamos
+        },
+      ],
+    });
     res.json(books);
   } catch (error) {
     res.status(500).json({ error: error.message });
