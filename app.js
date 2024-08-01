@@ -37,12 +37,12 @@ app.use('/api', loanRoutes);
 
 
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 4000;
 // Sincronizar base de datos y arrancar el servidorrewrerertewwerwerwer
 sequelize.sync({ force: false })
   .then(() => {
     app.listen(PORT, () => {
-      console.log('Server is running on port 3000');
+      console.log('Server is running on port', PORT);
     });
   })
   .catch((error) => console.log(error));
