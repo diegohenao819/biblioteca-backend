@@ -38,7 +38,7 @@ app.use('/api', loanRoutes);
 
 
 const PORT = process.env.PORT || 4000;
-// Sincronizar base de datos y arrancar el servidorrewrerertewwerwerwer
+
 sequelize.sync({ force: false })
   .then(() => {
     app.listen(PORT, () => {

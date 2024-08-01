@@ -138,7 +138,7 @@ const getUserLoans = async (req, res) => {
 
 
 const searchUsers = async (req, res) => {
-  const { query } = req.query; // Obtener el parámetro de búsqueda
+  const { query } = req.query; 
 
   try {
     const users = await User.findAll({
@@ -148,7 +148,7 @@ const searchUsers = async (req, res) => {
           { email: { [Op.iLike]: `%${query}%` } }
         ]
       },
-      attributes: ['id', 'name', 'email'] // Excluir la contraseña
+      attributes: ['id', 'name', 'email'] 
     });
     res.json(users);
   } catch (error) {

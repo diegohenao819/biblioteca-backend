@@ -8,7 +8,7 @@ const getBooks = async (req, res) => {
         {
           model: Loan,
           attributes: ['id', 'userId', 'loanDate', 'returnDate'],
-          required: false, // Esto asegura que también se incluyan libros sin préstamos
+          required: false, 
         },
       ],
     });
