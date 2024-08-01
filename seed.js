@@ -38,16 +38,16 @@ const seedDatabase = async () => {
 
     // Crear libros de ejemplo
     const books = await Book.bulkCreate([
-      { title: 'El Gran Gatsby', author: 'F. Scott Fitzgerald' },
-      { title: 'Matar a un ruiseñor', author: 'Harper Lee' },
-      { title: '1984', author: 'George Orwell' },
-      { title: 'Moby Dick', author: 'Herman Melville' },
-      { title: 'Guerra y Paz', author: 'Leo Tolstoy' },
-      { title: 'Orgullo y Prejuicio', author: 'Jane Austen' },
-      { title: 'El Guardián entre el Centeno', author: 'J.D. Salinger' },
-      { title: 'El Hobbit', author: 'J.R.R. Tolkien' },
-      { title: 'Crimen y Castigo', author: 'Fyodor Dostoevsky' },
-      { title: 'Un Mundo Feliz', author: 'Aldous Huxley' },
+      { title: 'El Gran Gatsby', author: 'F. Scott Fitzgerald', image: 'https://media.gettyimages.com/id/525595980/es/foto/robert-redford-in-the-great-gatsby.jpg?s=612x612&w=0&k=20&c=eVW1WNnTYuZJYFPAPqrDesvwmqg8z-croXbuxDV6Yrc=' },
+      { title: 'Matar a un ruiseñor', author: 'Harper Lee',image: 'https://media.gettyimages.com/id/1097419568/es/foto/engraved-drawing-of-the-common-nightingale-from-the-book-planches-enluminees-dhistoire.jpg?s=612x612&w=0&k=20&c=A8lyuBDFxcsZ3lecWe8sjOPVb6gRhrPsWc6a-sCOS70='  },
+      { title: '1984', author: 'George Orwell',image: 'https://media.gettyimages.com/id/3396793/es/foto/edmond-obrien-as-winston-smith-and-jan-sterling-as-julia-during-the-filming-of-an-adaptation-of.jpg?s=612x612&w=0&k=20&c=e0-WC4yXOYIgWygR1i48CZ4ezVBy7Q4Wv8j_BQ_UEJE='   },
+      { title: 'Moby Dick', author: 'Herman Melville', image: 'https://media.gettyimages.com/id/90017344/es/foto/united-states-moby-dick.jpg?s=612x612&w=0&k=20&c=qWn8LMLn8Js_llT1cFAFaiesizO3mJuc6S4br1szKwU='  },
+      { title: 'Guerra y Paz', author: 'Leo Tolstoy', image: 'https://media.gettyimages.com/id/1187603060/es/foto/commander-in-chief-surveying-the-field-of-victory-1916-from-the-war-illustrated-album-de-luxe.jpg?s=612x612&w=0&k=20&c=cd90o-tvqiQ6W4e6wFcaSd6DR5gE3oFEP3oSZbXmSfg=' },
+      { title: 'Orgullo y Prejuicio', author: 'Jane Austen', image: 'https://media.gettyimages.com/id/1431005313/es/foto/pride-and-prejudice-by-jane-austen-portrait-of-lady-lucas-chapter-v-caption-reads-lady-lucas.jpg?s=612x612&w=0&k=20&c=eIBR_M4H5H3Vd1y_zG15QpxiC2g6QFRinx396L9MzZI=' },
+      { title: 'El Guardián entre el Centeno', author: 'J.D. Salinger', image: 'https://th.bing.com/th/id/R.78d6a2e6242b59e0a9397423ffc806a2?rik=h%2bU01dtyVxWBlw&riu=http%3a%2f%2f1.bp.blogspot.com%2f-19-7Xul0zIQ%2fVqWSvCOqZLI%2fAAAAAAAAAwY%2fHhtedp3eXK0%2fs1600%2fguardian-entre-el-centeno-portada.jpg&ehk=B%2b3wOOGAQtXbiAdQEhnEW3XFppKz2wCDayI1Lg7%2bawo%3d&risl=&pid=ImgRaw&r=0' },
+      { title: 'El Hobbit', author: 'J.R.R. Tolkien' , image: 'https://media.gettyimages.com/id/538078892/es/foto/doksy-czech-republic-a-participant-represent-frodo-character-from-the-hobbit-book-by-j-r-r.jpg?s=612x612&w=0&k=20&c=oirIuaBOdE0UHrKIiL3L4x-k3_FsTMwBdZVZC12feCo='},
+      { title: 'Crimen y Castigo', author: 'Fyodor Dostoevsky', image: 'https://media.gettyimages.com/id/931723856/es/foto/the-police-arrested-the-police-the-six-prisoners-were-taken-into-a-parlour-at-the-railway.jpg?s=612x612&w=0&k=20&c=2pkNaUIuHz6ZnSck5Xgdn1SDDPwXyFNqY3r7vO6xO-I=' },
+      { title: 'Un Mundo Feliz', author: 'Aldous Huxley', image: 'https://m.media-amazon.com/images/I/61Phad+-7XL._AC_UY654_QL65_.jpg' },
     ]);
 
     // Crear préstamos de ejemplo

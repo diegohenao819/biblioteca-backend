@@ -15,7 +15,10 @@ const Book = sequelize.define('Book', {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  
+  image: {
+    type: DataTypes.STRING,  
+    allowNull: true,         
+  },
 });
 
 module.exports = Book;
